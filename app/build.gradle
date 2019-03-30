@@ -51,6 +51,9 @@ dependencies {
     implementation "com.google.firebase:firebase-core:$rootProject.firebaseVersion"
     implementation "com.crashlytics.sdk.android:crashlytics:$rootProject.crashlyticsVersion"
 
+    // 3rd-Party Libraries
+    implementation "com.jakewharton.timber:timber:$rootProject.timberLibraryVersion"
+
     //
     // Unit Tests
     // --------------------------------------------------
