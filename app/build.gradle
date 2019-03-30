@@ -1,0 +1,65 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'io.fabric'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion rootProject.ext.androidCompileSdkVersion
+    defaultConfig {
+        applicationId "com.example.android.barebone" // TODO UPDATE APPID
+        minSdkVersion rootProject.ext.androidMinSdkVersion
+        targetSdkVersion rootProject.ext.androidTargetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        versionNameSuffix "-${gitSha()}"
+
+        buildConfigField "String", "GIT_SHA", "\"${gitSha()}\""
+        buildConfigField "String", "BUILD_TIME", "\"${buildTime()}\""
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        testOptions {
+            unitTests.returnDefaultValues = true
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Google Products & Support library dependencies
+    // --------------------------------------------------
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
+    implementation "androidx.core:core-ktx:$rootProject.coreKtxVersion"
+    implementation "com.google.android.material:material:$rootProject.androidMaterialVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
+
+
+    // Firebase and Crashlytics platform
+    // --------------------------------------------------
+    implementation "com.google.firebase:firebase-core:$rootProject.firebaseVersion"
+    implementation "com.crashlytics.sdk.android:crashlytics:$rootProject.crashlyticsVersion"
+
+    //
+    // Unit Tests
+    // --------------------------------------------------
+    testImplementation "junit:junit:$rootProject.junitVersion"
+    testImplementation "org.mockito:mockito-inline:$rootProject.mockitoVersion" // Mockito framework
+    androidTestImplementation "androidx.test:runner:$rootProject.androidTestRunnerVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
+}
+
+
+// Add to the bottom of the file
+apply plugin: 'com.google.gms.google-services'
