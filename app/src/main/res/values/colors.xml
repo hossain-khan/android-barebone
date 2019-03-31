@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <!--
+        Material theme colors. See following for more definitions.
+        * https://github.com/material-components/material-components-android/blob/master/docs/theming/Color.md
+    -->
+    <color name="colorPrimary">#5D1049</color>
+    <color name="colorPrimaryDark">#490D3A</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimaryVariant">#4E0D3A</color>
+    <color name="colorSecondary">#E30425</color>
+    <color name="colorSurface">#FFFBFA</color>
+    <color name="colorError">#EF9A43</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorOnSecondary">#FFFFFF</color>
+    <color name="colorOnSurface">#442B2D</color>
+    <color name="colorOnError">#FFFBFA</color>
+    <color name="colorOnBackground">#442B2D</color>
+
+    <!-- Application Specific Colors -->
 </resources>
