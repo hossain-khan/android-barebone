@@ -24,3 +24,4 @@ Here are list of dependencies included:
 ### Pre-Requisite
 * You must create a Firebase project and use the `google-services.json` from your project. A [placeholder google-services.json](https://github.com/amardeshbd/android-barebone/blob/master/app/google-services.json) is provided so that app compiles.
 * You must update package name and application ID where applicable.
+* Also update your application's theme color. See [styles.xml](https://github.com/amardeshbd/android-barebone/blob/master/app/src/main/res/values/styles.xml)
