@@ -1,15 +1,12 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'io.fabric'
-
 apply plugin: 'kotlin-android'
-
-apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion rootProject.ext.androidCompileSdkVersion
     defaultConfig {
-        applicationId "com.example.android.barebone" // TODO UPDATE APPID
+        applicationId "com.example.android.barebone" // TODO UPDATE APP-ID
         minSdkVersion rootProject.ext.androidMinSdkVersion
         targetSdkVersion rootProject.ext.androidTargetSdkVersion
         versionCode 1
@@ -51,8 +48,11 @@ dependencies {
     implementation "com.google.firebase:firebase-core:$rootProject.firebaseVersion"
     implementation "com.crashlytics.sdk.android:crashlytics:$rootProject.crashlyticsVersion"
 
+    //
     // 3rd-Party Libraries
+    // --------------------------------------------------
     implementation "com.jakewharton.timber:timber:$rootProject.timberLibraryVersion"
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$rootProject.leakcanaryLibraryVersion"
 
     //
     // Unit Tests
