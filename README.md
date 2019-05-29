@@ -34,3 +34,10 @@ Here are list of dependencies included:
 * You must create a Firebase project and use the `google-services.json` from your project. A [placeholder google-services.json](https://github.com/amardeshbd/android-barebone/blob/master/app/google-services.json) is provided so that app compiles.
 * You must update package name and application ID where applicable.
 * Also update your application's theme color. See [styles.xml](https://github.com/amardeshbd/android-barebone/blob/master/app/src/main/res/values/styles.xml)
+
+### Preview
+Currently the barebone app has two activities.
+* Feature X - showcases how REST call is made using injected service in ViewModel.
+* Feature Z - showcases how Fragment can also have injection and use service in ViewModel.
+
+![](https://user-images.githubusercontent.com/99822/58590184-8baeae00-8231-11e9-9370-e012de85196e.png)
