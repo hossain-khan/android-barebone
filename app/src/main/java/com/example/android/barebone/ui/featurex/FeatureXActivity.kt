@@ -1,14 +1,31 @@
 package com.example.android.barebone.ui.featurex
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import com.example.android.barebone.R
+import com.example.android.barebone.databinding.ActivityFeatureXBinding
+import dagger.android.AndroidInjection
+import javax.inject.Inject
 
 class FeatureXActivity : AppCompatActivity() {
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+
+    private lateinit var viewModel: FeatureXViewModel
+    private lateinit var binding: ActivityFeatureXBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_feature_x)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_feature_x)
+
+
+        viewModel = ViewModelProviders.of(this, viewModelFactory).get(FeatureXViewModel::class.java)
+        binding.lifecycleOwner = this
+        binding.viewModel = viewModel
     }
 }
