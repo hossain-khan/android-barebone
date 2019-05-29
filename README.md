@@ -2,7 +2,11 @@
 
 
 # Android Barebone Project
-A barebone Android project with some essential tools configured the right way.
+A barebone MVVM architecture based Android project with some essential tools configured the right way.
+
+> Inspiration: The architecture is inspired by combination of different project by Google and Android Community, such as:
+> - [Github Browser](https://github.com/googlesamples/android-architecture-components/tree/master/GithubBrowserSample) - Sample project from Android Architecture Components repository
+> - [Todo MVVM LiveData App](https://github.com/googlesamples/android-architecture/tree/todo-mvvm-live-kotlin/) - Todo app by Android Architecture Blueprints
 
 ## Configured Essentials
 There are few essentials that are added to the project. Best way to see what is included is to check the latest **dependecies** from [app/build.gradle](https://github.com/amardeshbd/android-barebone/blob/master/app/build.gradle#L37)
