@@ -2,12 +2,17 @@ package com.example.android.barebone.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.android.barebone.di.ViewModelModule
 import javax.inject.Inject
 import javax.inject.Provider
 import javax.inject.Singleton
 
 /**
- * The [ViewModelProvider.Factory] to get instance of all viewmodels.
+ * The [ViewModelProvider.Factory] to get instance of all viewmodels using Dagger multi-binding.
+ *
+ *
+ * @see <a href="https://dagger.dev/multibindings">Multibindings</a>
+ * @see [ViewModelModule]
  */
 @Singleton
 class ViewModelProviderFactory @Inject constructor(

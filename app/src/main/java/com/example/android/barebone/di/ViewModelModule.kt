@@ -10,6 +10,11 @@ import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
 
+/**
+ * Uses dagger multi-binding to provide [ViewModel] instances used in the app.
+ *
+ * @see <a href="https://dagger.dev/multibindings">Multibindings</a>
+ */
 @Suppress("unused")
 @Module
 abstract class ViewModelModule {
@@ -26,7 +31,7 @@ abstract class ViewModelModule {
     @Binds
     @IntoMap
     @ViewModelKey(FeatureZViewModel::class)
-    abstract fun bindLoginViewModel(featureZViewModel: FeatureZViewModel): ViewModel
+    abstract fun bindFeatureZViewModel(featureZViewModel: FeatureZViewModel): ViewModel
 
     @Binds
     abstract fun bindViewModelFactory(factory: ViewModelProviderFactory): ViewModelProvider.Factory
