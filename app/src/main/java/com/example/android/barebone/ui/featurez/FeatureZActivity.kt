@@ -9,5 +9,6 @@ class FeatureZActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_feature_z)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 }
