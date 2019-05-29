@@ -10,6 +10,11 @@ import com.example.android.barebone.databinding.ActivityFeatureXBinding
 import dagger.android.AndroidInjection
 import javax.inject.Inject
 
+/**
+ * This activity shows how web service API can be used via ViewModel.
+ *
+ * @see FeatureXViewModel
+ */
 class FeatureXActivity : AppCompatActivity() {
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
