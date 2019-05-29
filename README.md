@@ -15,9 +15,14 @@ Here are list of dependencies included:
 1. **AndroidX** 
     1. AppCompat
     1. Material Theme
+    1. ViewModel
+    1. Lifecycle
 1. **Firebase Crashlytics**
 1. **Firebase Analytics**
 1. **Timber** - _android logging_
+1. **Dagger 2** - _dependency injection_
+1. **Retrofit 2** - _REST API_
+1. **Gson** - _JSON response parsing_
 1. **Mockito** - _unit test mocking_
 
 ### Optional Library and Integrations
