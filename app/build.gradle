@@ -107,6 +107,5 @@ dependencies {
 }
 
 
-// Add to the bottom of the file
-apply plugin: 'com.google.gms.google-services'
-apply plugin: 'kotlin-android-extensions'
+// Must be applied at the bottom - See https://firebase.google.com/docs/android/setup
+apply plugin: 'com.google.gms.google-services' // Google Play services Gradle plugin
