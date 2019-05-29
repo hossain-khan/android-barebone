@@ -4,7 +4,6 @@ import com.example.android.barebone.BuildConfig
 import com.example.android.barebone.api.WebServiceApi
 import dagger.Module
 import dagger.Provides
-import okhttp3.Authenticator
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -17,10 +16,10 @@ import javax.inject.Singleton
 class NetworkModule {
     @Provides
     @Singleton
-    internal fun okHttpClient(autenticator: Authenticator): OkHttpClient {
+    internal fun okHttpClient(): OkHttpClient {
         val logging = HttpLoggingInterceptor()
         logging.level = HttpLoggingInterceptor.Level.BODY
-        val builder = OkHttpClient.Builder().authenticator(autenticator)
+        val builder = OkHttpClient.Builder()
 
         if (BuildConfig.DEBUG) {
             // Only add HTTP logs for debug builds
