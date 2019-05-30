@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.android.barebone.R
 import com.example.android.barebone.databinding.ActivityMainBinding
 import com.example.android.barebone.ui.featurex.FeatureXActivity
+import com.example.android.barebone.ui.featurey.FeatureYActivity
 import com.example.android.barebone.ui.featurez.FeatureZActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.android.AndroidInjection
@@ -65,6 +66,11 @@ class MainActivity : AppCompatActivity() {
         viewModel.featureXEvent.observe(this, Observer {
             Timber.i("Launching feature X activity.")
             startActivity(Intent(this@MainActivity, FeatureXActivity::class.java))
+        })
+
+        viewModel.featureYEvent.observe(this, Observer {
+            Timber.i("Launching feature Y activity.")
+            startActivity(Intent(this@MainActivity, FeatureYActivity::class.java))
         })
 
         viewModel.featureZEvent.observe(this, Observer {

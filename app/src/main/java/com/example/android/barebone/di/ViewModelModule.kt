@@ -3,6 +3,7 @@ package com.example.android.barebone.di
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.android.barebone.ui.featurex.FeatureXViewModel
+import com.example.android.barebone.ui.featurey.FeatureYViewModel
 import com.example.android.barebone.ui.featurez.FeatureZViewModel
 import com.example.android.barebone.ui.home.HomeViewModel
 import com.example.android.barebone.viewmodel.ViewModelProviderFactory
@@ -27,6 +28,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(FeatureXViewModel::class)
     abstract fun bindFeatureXViewModel(featureXViewModel: FeatureXViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(FeatureYViewModel::class)
+    abstract fun bindFeatureYViewModel(featureYViewModel: FeatureYViewModel): ViewModel
 
     @Binds
     @IntoMap

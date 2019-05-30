@@ -21,6 +21,7 @@ Here are list of dependencies included:
 1. **Firebase Analytics**
 1. **Timber** - _android logging_
 1. **Dagger 2** - _dependency injection_
+1. **RxJava 2** - _ReactiveX Java_
 1. **Retrofit 2** - _REST API_
 1. **Gson** - _JSON response parsing_
 1. **Mockito** - _unit test mocking_
@@ -36,8 +37,9 @@ Here are list of dependencies included:
 * Also update your application's theme color. See [styles.xml](https://github.com/amardeshbd/android-barebone/blob/master/app/src/main/res/values/styles.xml)
 
 ### Preview
-Currently the barebone app has two activities.
-* Feature X - showcases how REST call is made using injected service in ViewModel.
-* Feature Z - showcases how Fragment can also have injection and use service in ViewModel.
+Currently the barebone app has following sample activities:
+* `Feature X` - showcases how REST call is made using injected service in ViewModel.
+* `Feature Y` - showcases how RecyclerView can be used in conjunction with DiffUtils.
+* `Feature Z` - showcases how Fragment can also have injection and use service in ViewModel.
 
-![](https://user-images.githubusercontent.com/99822/58590184-8baeae00-8231-11e9-9370-e012de85196e.png)
+![](https://user-images.githubusercontent.com/99822/58602978-f7f2d700-825c-11e9-8f51-5bb4e8108af2.png)

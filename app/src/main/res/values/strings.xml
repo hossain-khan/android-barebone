@@ -4,5 +4,6 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_feature_x">Feature X Title</string>
+    <string name="title_feature_y">Feature Y Title</string>
     <string name="title_feature_z">Feature Z Title</string>
 </resources>

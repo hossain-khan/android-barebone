@@ -15,12 +15,13 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity
-            android:name=".ui.featurez.FeatureZActivity"
-            android:label="@string/title_feature_z"
-            android:parentActivityName=".ui.home.MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.home.MainActivity" />
+            android:name=".ui.home.MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".ui.featurex.FeatureXActivity"
@@ -31,13 +32,20 @@
                 android:value=".ui.home.MainActivity" />
         </activity>
         <activity
-            android:name=".ui.home.MainActivity"
-            android:label="@string/app_name">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:name=".ui.featurey.FeatureYActivity"
+            android:label="@string/title_feature_y"
+            android:parentActivityName=".ui.home.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.home.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ui.featurez.FeatureZActivity"
+            android:label="@string/title_feature_z"
+            android:parentActivityName=".ui.home.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.home.MainActivity" />
         </activity>
     </application>
 
