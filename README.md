@@ -37,7 +37,7 @@ Here are list of dependencies included:
 * Also update your application's theme color. See [styles.xml](https://github.com/amardeshbd/android-barebone/blob/master/app/src/main/res/values/styles.xml)
 
 ### Preview
-Currently the barebone app has two activities.
+Currently the barebone app has following sample activities:
 * `Feature X` - showcases how REST call is made using injected service in ViewModel.
 * `Feature Y` - showcases how RecyclerView can be used in conjunction with DiffUtils.
 * `Feature Z` - showcases how Fragment can also have injection and use service in ViewModel.
