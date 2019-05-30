@@ -40,6 +40,17 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
+            android:id="@+id/action_open_featurey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Launch Feature Y"
+            android:onClick="@{() -> viewModel.openFeatureYClicked()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/action_open_featurex" />
+
+        <Button
             android:id="@+id/action_open_featurez"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -48,7 +59,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/action_open_featurex" />
+            app:layout_constraintTop_toBottomOf="@+id/action_open_featurey" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/nav_view"

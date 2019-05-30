@@ -2,6 +2,7 @@ package com.example.android.barebone.di
 
 import com.example.android.barebone.BareboneApplication
 import com.example.android.barebone.ui.featurex.FeatureXActivity
+import com.example.android.barebone.ui.featurey.FeatureYActivity
 import com.example.android.barebone.ui.home.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -43,6 +44,10 @@ abstract class ActivityBindingModule {
     @ActivityScope
     @ContributesAndroidInjector
     abstract fun contributeFeatureXActivity(): FeatureXActivity
+
+    @ActivityScope
+    @ContributesAndroidInjector
+    abstract fun contributeFeatureYActivity(): FeatureYActivity
 
     @ActivityScope
     @ContributesAndroidInjector
