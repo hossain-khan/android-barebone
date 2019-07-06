@@ -2,6 +2,7 @@ package com.example.android.barebone.ui.featurex
 
 import androidx.databinding.ObservableField
 import androidx.lifecycle.ViewModel
+import com.example.android.barebone.ui.common.Result
 import com.example.android.barebone.api.WebServiceApi
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -12,7 +13,7 @@ import javax.inject.Inject
 class FeatureXViewModel @Inject constructor(private val api: WebServiceApi) : ViewModel() {
     private val compositeDisposable = CompositeDisposable()
     val isOperationInProgress = ObservableField(false)
-    val message = ObservableField("")
+    val message = ObservableField<Result<String>>()
 
     fun onSendWebRequest(name: String) {
         Timber.i("Sending web request with name: $name")
@@ -25,10 +26,10 @@ class FeatureXViewModel @Inject constructor(private val api: WebServiceApi) : Vi
                 .doOnSuccess { isOperationInProgress.set(false) }
                 .doOnError { isOperationInProgress.set(false) }
                 .subscribe({
-                    message.set(it.messsage ?: "")
+                    message.set(Result.Success(it.messsage ?: ""))
                 }, { error ->
                     Timber.e(error)
-                    message.set(error.message ?: "Error")
+                    message.set(Result.Error(error))
                 })
         )
     }

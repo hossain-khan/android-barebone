@@ -7,6 +7,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.example.android.barebone.R
 import com.example.android.barebone.databinding.ActivityFeatureXBinding
+import com.example.android.barebone.ui.common.Result
+import com.example.android.barebone.ui.extensions.onChanged
 import dagger.android.AndroidInjection
 import javax.inject.Inject
 
@@ -32,5 +34,17 @@ class FeatureXActivity : AppCompatActivity() {
         viewModel = ViewModelProviders.of(this, viewModelFactory).get(FeatureXViewModel::class.java)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
+
+
+        viewModel.message.onChanged { result ->
+            when (result) {
+                is Result.Success -> {
+                    binding.messageText.text = result.data
+                }
+                is Result.Error -> {
+                    binding.messageText.text = result.exception.message
+                }
+            }
+        }
     }
 }
