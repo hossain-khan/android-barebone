@@ -15,6 +15,7 @@ import javax.inject.Singleton
         DataStoreModule::class,
         NetworkModule::class,
         ActivityBindingModule::class,
+        ActivityMainModule::class,
         ActivityFeatureZModule::class
     ]
 )

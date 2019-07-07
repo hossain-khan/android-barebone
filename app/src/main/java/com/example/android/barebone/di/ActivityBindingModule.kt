@@ -3,7 +3,6 @@ package com.example.android.barebone.di
 import com.example.android.barebone.BareboneApplication
 import com.example.android.barebone.ui.featurex.FeatureXActivity
 import com.example.android.barebone.ui.featurey.FeatureYActivity
-import com.example.android.barebone.ui.home.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -23,7 +22,7 @@ import dagger.android.ContributesAndroidInjector
 abstract class ActivityBindingModule {
     /*
      * DEV NOTE:
-     * ===========
+     * ===============================================================================================
      *
      * `ContributesAndroidInjector` Generates an AndroidInjector for the return type of this method.
      * The injector is implemented with a Subcomponent and will be a child of the Module's component.
@@ -39,6 +38,17 @@ abstract class ActivityBindingModule {
      * annotate it with @ContributesAndroidInjector, and specify the modules you want to install
      * into the subcomponent. If the subcomponent needs scopes, apply the scope annotations to
      * the method as well.
+     *
+     * DEV NOTE # 2
+     * ================================================================================================
+     * Remember, if activity hosts fragments and those needs to be injected, then for each activity
+     * you have to define it's own ActivityModule and FragmentBindingModule. They can not live here,
+     * otherwise you will get following errors:
+     * -- XYZ cannot be provided without an @Provides-annotated method.
+     * -- A binding with matching key exists in component XYZ
+     * -- The same map key is bound more than once for XYZ
+     *
+     * See `ActivityMainModule` and `ActivityMainFragmentBindingModule` for more info.
      */
 
     @ActivityScope
@@ -48,8 +58,4 @@ abstract class ActivityBindingModule {
     @ActivityScope
     @ContributesAndroidInjector
     abstract fun contributeFeatureYActivity(): FeatureYActivity
-
-    @ActivityScope
-    @ContributesAndroidInjector
-    abstract fun contributeHomeActivity(): MainActivity
 }

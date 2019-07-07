@@ -6,6 +6,7 @@ import com.example.android.barebone.ui.featurex.FeatureXViewModel
 import com.example.android.barebone.ui.featurey.FeatureYViewModel
 import com.example.android.barebone.ui.featurez.FeatureZViewModel
 import com.example.android.barebone.ui.home.HomeViewModel
+import com.example.android.barebone.ui.home.homefragments.FragmentAViewModel
 import com.example.android.barebone.viewmodel.ViewModelProviderFactory
 import dagger.Binds
 import dagger.Module
@@ -22,22 +23,27 @@ abstract class ViewModelModule {
     @Binds
     @IntoMap
     @ViewModelKey(HomeViewModel::class)
-    abstract fun bindHomeViewModel(homeViewModel: HomeViewModel): ViewModel
+    abstract fun bindHomeViewModel(viewModel: HomeViewModel): ViewModel
 
     @Binds
     @IntoMap
     @ViewModelKey(FeatureXViewModel::class)
-    abstract fun bindFeatureXViewModel(featureXViewModel: FeatureXViewModel): ViewModel
+    abstract fun bindFeatureXViewModel(viewModel: FeatureXViewModel): ViewModel
 
     @Binds
     @IntoMap
     @ViewModelKey(FeatureYViewModel::class)
-    abstract fun bindFeatureYViewModel(featureYViewModel: FeatureYViewModel): ViewModel
+    abstract fun bindFeatureYViewModel(viewModel: FeatureYViewModel): ViewModel
 
     @Binds
     @IntoMap
     @ViewModelKey(FeatureZViewModel::class)
-    abstract fun bindFeatureZViewModel(featureZViewModel: FeatureZViewModel): ViewModel
+    abstract fun bindFeatureZViewModel(viewModel: FeatureZViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(FragmentAViewModel::class)
+    abstract fun bindFragmentAViewModel(viewModel: FragmentAViewModel): ViewModel
 
     @Binds
     abstract fun bindViewModelFactory(factory: ViewModelProviderFactory): ViewModelProvider.Factory

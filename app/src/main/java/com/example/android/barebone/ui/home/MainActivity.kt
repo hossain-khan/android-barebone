@@ -6,6 +6,7 @@ import android.view.MenuItem
 import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
@@ -17,10 +18,18 @@ import com.example.android.barebone.ui.featurey.FeatureYActivity
 import com.example.android.barebone.ui.featurez.FeatureZActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.android.AndroidInjection
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.support.HasSupportFragmentInjector
 import timber.log.Timber
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener,
+    HasSupportFragmentInjector {
+
+    @Inject
+    lateinit var dispatchingAndroidFragmentInjector: DispatchingAndroidInjector<Fragment>
+
+    override fun supportFragmentInjector() = dispatchingAndroidFragmentInjector
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
