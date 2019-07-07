@@ -67,7 +67,7 @@ ext {
     // --------------------------------------------------
     daggerVersion = '2.22.1' // https://github.com/google/dagger
     timberLibraryVersion = '4.7.1' // https://github.com/JakeWharton/timber
-    leakcanaryLibraryVersion = '2.0-alpha-2' // https://github.com/square/leakcanary/releases
+    leakcanaryLibraryVersion = '2.0-alpha-3' // https://github.com/square/leakcanary/releases
     rxJavaVersion = '2.2.8' // https://github.com/ReactiveX/RxJava/releases
     rxAndroidVersion = '2.1.1' // https://github.com/ReactiveX/RxAndroid/releases
     retrofitVersion = '2.5.0' // https://square.github.io/retrofit/
