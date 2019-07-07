@@ -48,7 +48,7 @@ abstract class ActivityBindingModule {
      * -- A binding with matching key exists in component XYZ
      * -- The same map key is bound more than once for XYZ
      *
-     * See `ActivityMainModule` and `ActivityMainFragmentBindingModule` for more info.
+     * See `ActivityMainModule` and `FragmentBindingModule` for more info.
      */
 
     @ActivityScope

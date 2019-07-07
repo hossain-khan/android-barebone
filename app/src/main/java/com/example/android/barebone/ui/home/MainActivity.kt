@@ -1,21 +1,16 @@
 package com.example.android.barebone.ui.home
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.viewpager.widget.ViewPager
 import com.example.android.barebone.R
 import com.example.android.barebone.databinding.ActivityMainBinding
-import com.example.android.barebone.ui.featurex.FeatureXActivity
-import com.example.android.barebone.ui.featurey.FeatureYActivity
-import com.example.android.barebone.ui.featurez.FeatureZActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.android.AndroidInjection
 import dagger.android.DispatchingAndroidInjector
@@ -50,8 +45,6 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
 
         setupBottomNavigationBar()
-
-        observeNavigationEvents(viewModel)
     }
 
     private fun setupBottomNavigationBar() {
@@ -80,26 +73,6 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         scrollToScreen(defaultScreen)
         selectBottomNavigationViewMenuItem(defaultScreen.menuItemId)
         supportActionBar?.setTitle(defaultScreen.titleStringId)
-    }
-
-    /**
-     * TODO: This is an example of how LiveData can be used to navigate. Update accordingly.
-     */
-    private fun observeNavigationEvents(viewModel: HomeViewModel) {
-        viewModel.featureXEvent.observe(this, Observer {
-            Timber.i("Launching feature X activity.")
-            startActivity(Intent(this@MainActivity, FeatureXActivity::class.java))
-        })
-
-        viewModel.featureYEvent.observe(this, Observer {
-            Timber.i("Launching feature Y activity.")
-            startActivity(Intent(this@MainActivity, FeatureYActivity::class.java))
-        })
-
-        viewModel.featureZEvent.observe(this, Observer {
-            Timber.i("Launching feature Z activity.")
-            startActivity(Intent(this@MainActivity, FeatureZActivity::class.java))
-        })
     }
 
     /**
