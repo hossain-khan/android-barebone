@@ -18,17 +18,18 @@ Here are list of dependencies included:
     1. ViewModel
     1. Lifecycle
     1. ConstraintLayout
+    1. ViewPager
     1. Kotlin Extensions (KTX)
 1. **Firebase Crashlytics**
 1. **Firebase Analytics**
 1. **Timber** - _android logging_
-1. **Dagger 2** - _dependency injection_
+1. **Dagger 2** - _dependency injection for Activity and Fragment_
 1. **RxJava 2** - _ReactiveX Java_
 1. **Retrofit 2** - _REST API_
 1. **OkHttp** - with logging interceptor
 1. **Gson** - _JSON response parsing_
 1. **Mockito** - _unit test mocking_
-1. **Leak Canary** - _automatic memory leak detection_
+1. **Leak Canary 2 _(alpha)_** - _automatic memory leak detection_
 
 ### Optional Library and Integrations
 > You may need to delete optional features based on your need.
@@ -38,12 +39,14 @@ Here are list of dependencies included:
 ### Pre-Requisite (:computer: TODO After cloning repo)
 * You must create a Firebase project and use the `google-services.json` from your project. A [placeholder google-services.json](https://github.com/amardeshbd/android-barebone/blob/master/app/google-services.json) is provided so that app compiles.
 * You must update package name and application ID where applicable.
-* Remove feature `X`, `Y`, and `Y` activities and related resources. However, it may be benefitial to keep them as reference point at initial phase of the project.
+* Remove feature `X`, `Y`, and `Y` activities and related resources. However, it may be beneficial to keep them as reference point at initial phase of the project.
+* Remove fragment `A`, `B`, and `C` and related files like ViewModel and Layout files. Make sure you study how each activity that hosts Fragment requires a separate :hocho: dagger module.
 * Remove unused libraries that are added in [app/build.gradle](https://github.com/amardeshbd/android-barebone/blob/master/app/build.gradle#L44)
 * Also update your application's theme color. See [styles.xml](https://github.com/amardeshbd/android-barebone/blob/master/app/src/main/res/values/styles.xml)
 
 ### Preview
 Currently the barebone app has following sample activities:
+* `MainActivity` - Hosts fragments using `ViewPager` and navigates using `BottomNavigationView`.
 * `Feature X` - showcases how REST call is made using injected service in ViewModel.
 * `Feature Y` - showcases how RecyclerView can be used in conjunction with DiffUtils.
 * `Feature Z` - showcases how Fragment can also have injection and use service in ViewModel.
