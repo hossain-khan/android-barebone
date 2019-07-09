@@ -1,6 +1,5 @@
 package com.example.android.barebone.ui.common
 
-
 import androidx.lifecycle.LiveData
 import com.example.android.barebone.ui.extensions.LiveEvent
 

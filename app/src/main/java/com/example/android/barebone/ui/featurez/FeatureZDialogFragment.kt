@@ -20,7 +20,11 @@ class FeatureZDialogFragment : DialogFragment(), Injectable {
     lateinit var binding: DialogFeatureZBinding
     lateinit var viewModel: FeatureZViewModel
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         viewModel = activity?.run {
             ViewModelProviders.of(this, viewModelFactory).get(FeatureZViewModel::class.java)
         } ?: throw Exception("Invalid Activity")
@@ -29,7 +33,6 @@ class FeatureZDialogFragment : DialogFragment(), Injectable {
         binding.viewModel = viewModel
         return binding.root
     }
-
 
     override fun onPause() {
         super.onPause()

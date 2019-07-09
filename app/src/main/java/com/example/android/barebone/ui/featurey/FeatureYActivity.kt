@@ -30,14 +30,12 @@ class FeatureYActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_feature_y)
 
-
         viewModel = ViewModelProviders.of(this, viewModelFactory).get(FeatureYViewModel::class.java)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
 
         setupIdeaList(binding.recyclerView)
     }
-
 
     private fun setupIdeaList(ideaList: RecyclerView) {
 
@@ -56,5 +54,4 @@ class FeatureYActivity : AppCompatActivity() {
             ideaListAdapter.submitList(result)
         })
     }
-
 }

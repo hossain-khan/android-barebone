@@ -37,4 +37,3 @@ class MainPagerAdapter(fm: FragmentManager) :
         return screens.size
     }
 }
-

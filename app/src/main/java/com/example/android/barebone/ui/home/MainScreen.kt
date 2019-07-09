@@ -5,7 +5,6 @@ import androidx.annotation.IdRes
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 
-
 import com.example.android.barebone.ui.home.homefragments.FragmentA
 import com.example.android.barebone.ui.home.homefragments.FragmentB
 import com.example.android.barebone.ui.home.homefragments.FragmentC
