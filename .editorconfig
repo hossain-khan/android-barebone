@@ -1,0 +1,5 @@
+# EditorConfig is awesome: https://EditorConfig.org
+# Supported by KtLint Formatter
+
+[*.{kt,kts}]
+max_line_length = 120
