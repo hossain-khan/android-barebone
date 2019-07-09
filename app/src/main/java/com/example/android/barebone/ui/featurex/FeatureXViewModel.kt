@@ -34,7 +34,6 @@ class FeatureXViewModel @Inject constructor(private val api: WebServiceApi) : Vi
         )
     }
 
-
     override fun onCleared() {
         super.onCleared()
         compositeDisposable.clear()

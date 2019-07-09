@@ -9,7 +9,6 @@ import timber.log.Timber.DebugTree
 import timber.log.Timber
 import javax.inject.Inject
 
-
 class BareboneApplication : Application(), HasActivityInjector {
     @Inject
     lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
@@ -36,5 +35,4 @@ class BareboneApplication : Application(), HasActivityInjector {
         // Initialize dagger.
         AppInjector.init(this)
     }
-
 }

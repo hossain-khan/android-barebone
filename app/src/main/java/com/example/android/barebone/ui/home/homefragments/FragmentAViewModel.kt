@@ -21,7 +21,6 @@ class FragmentAViewModel @Inject constructor(
         Timber.i("Got injected shared preferences: %s", sharedPreferences)
     }
 
-
     fun openFeatureXClicked() {
         _featureXEvent.value = Unit
     }

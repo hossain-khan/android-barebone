@@ -30,11 +30,9 @@ class FeatureXActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_feature_x)
 
-
         viewModel = ViewModelProviders.of(this, viewModelFactory).get(FeatureXViewModel::class.java)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
-
 
         viewModel.message.onChanged { result ->
             when (result) {

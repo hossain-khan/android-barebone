@@ -39,7 +39,6 @@ class FeatureZActivity : AppCompatActivity(), HasSupportFragmentInjector {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_feature_z)
 
-
         viewModel = ViewModelProviders.of(this, viewModelFactory).get(FeatureZViewModel::class.java)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel

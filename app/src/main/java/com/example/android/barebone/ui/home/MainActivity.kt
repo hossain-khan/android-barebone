@@ -43,7 +43,6 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
 
-
         setupBottomNavigationBar()
     }
 
