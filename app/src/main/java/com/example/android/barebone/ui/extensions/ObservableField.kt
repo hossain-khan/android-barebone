@@ -20,3 +20,23 @@ inline fun <T> ObservableField<T>.onChanged(crossinline callback: (T) -> Unit) {
         }
     })
 }
+
+/**
+ * Converts an [ObservableField] to Rx stream in safe way by automatically removing callback on unsubscription.
+ * This avoids memory leak from activity.
+ */
+fun <T> ObservableField<T>.toObservable(): io.reactivex.Observable<T> {
+    return io.reactivex.Observable.create { e ->
+        val initialValue = get()
+        if (initialValue != null) {
+            e.onNext(initialValue)
+        }
+        val callback = object : Observable.OnPropertyChangedCallback() {
+            override fun onPropertyChanged(sender: Observable, propertyId: Int) {
+                e.onNext(get()!!)
+            }
+        }
+        addOnPropertyChangedCallback(callback)
+        e.setCancellable { removeOnPropertyChangedCallback(callback) }
+    }
+}
