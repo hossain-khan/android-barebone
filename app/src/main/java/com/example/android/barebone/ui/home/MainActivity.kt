@@ -8,7 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
-import androidx.viewpager.widget.ViewPager
+import androidx.viewpager2.widget.ViewPager2
 import com.example.android.barebone.R
 import com.example.android.barebone.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
     private lateinit var viewModel: HomeViewModel
     private lateinit var binding: ActivityMainBinding
-    private lateinit var mainPagerAdapter: MainPagerAdapter
+    private lateinit var mainPagerAdapter: HomePagerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
@@ -48,10 +48,10 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
     private fun setupBottomNavigationBar() {
         // Initialize components/views.
-        mainPagerAdapter = MainPagerAdapter(supportFragmentManager)
+        mainPagerAdapter = HomePagerAdapter(this)
 
         // Show the default screen.
-        selectScreen(MainScreen.HOME)
+        selectScreen(Screen.HOME)
 
         // Set the listener for item selection in the bottom navigation view.
         binding.navView.setOnNavigationItemSelectedListener(this)
@@ -59,16 +59,17 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         // Attach an adapter to the view pager and make it select the bottom navigation
         // menu item and change the title to proper values when selected.
         binding.viewPager.adapter = mainPagerAdapter
-        binding.viewPager.addOnPageChangeListener(object : ViewPager.SimpleOnPageChangeListener() {
+
+        binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
-                val selectedScreen = mainPagerAdapter.getItems()[position]
+                val selectedScreen: Screen = Screen.values()[position]
                 selectBottomNavigationViewMenuItem(selectedScreen.menuItemId)
                 supportActionBar?.setTitle(selectedScreen.titleStringId)
             }
         })
     }
 
-    private fun selectScreen(defaultScreen: MainScreen) {
+    private fun selectScreen(defaultScreen: Screen) {
         scrollToScreen(defaultScreen)
         selectBottomNavigationViewMenuItem(defaultScreen.menuItemId)
         supportActionBar?.setTitle(defaultScreen.titleStringId)
@@ -77,10 +78,9 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     /**
      * Scrolls ViewPager to show the provided screen.
      */
-    private fun scrollToScreen(mainScreen: MainScreen) {
-        val screenPosition = mainPagerAdapter.getItems().indexOf(mainScreen)
-        if (screenPosition != binding.viewPager.currentItem) {
-            binding.viewPager.currentItem = screenPosition
+    private fun scrollToScreen(screen: Screen) {
+        if (screen.ordinal != binding.viewPager.currentItem) {
+            binding.viewPager.setCurrentItem(screen.ordinal, true)
         }
     }
 

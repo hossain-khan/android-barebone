@@ -71,6 +71,7 @@ ext {
     crashlyticsVersion = '2.10.1' // https://firebase.google.com/docs/crashlytics/get-started
     coreKtxVersion = '1.0.2' // https://developer.android.com/kotlin/ktx
     androidMaterialVersion = '1.1.0-alpha07' // https://github.com/material-components/material-components-android/releases
+    viewPager2Version = '1.0.0-beta02' // https://developer.android.com/jetpack/androidx/releases/viewpager2
 
     // 3rd party library dependencies
     // --------------------------------------------------
