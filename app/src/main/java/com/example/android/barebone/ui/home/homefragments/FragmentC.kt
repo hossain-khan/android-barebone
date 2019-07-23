@@ -19,6 +19,12 @@ import javax.inject.Inject
  * TODO: Move the fragment to it's own feature package.
  */
 class FragmentC : Fragment(), Injectable {
+    companion object {
+        fun createInstance(): FragmentC {
+            return FragmentC()
+        }
+    }
+
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
