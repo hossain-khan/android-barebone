@@ -18,7 +18,7 @@ Here are list of dependencies included:
     1. ViewModel
     1. Lifecycle
     1. ConstraintLayout
-    1. ViewPager
+    1. ViewPager 2
     1. Kotlin Extensions (KTX)
 1. **Firebase Crashlytics**
 1. **Firebase Analytics**
