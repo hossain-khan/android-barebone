@@ -16,7 +16,6 @@ android {
         versionNameSuffix "-${gitSha()}"
 
         buildConfigField "String", "GIT_SHA", "\"${gitSha()}\""
-        buildConfigField "String", "BUILD_TIME", "\"${buildTime()}\""
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
