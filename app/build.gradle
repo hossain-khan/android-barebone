@@ -61,7 +61,8 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
     implementation "androidx.viewpager2:viewpager2:$rootProject.viewPager2Version"
     implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycleVersion"
-    kapt "android.arch.lifecycle:compiler:$rootProject.lifecycleVersion"
+    // alternately - if using Java8, use the following instead of lifecycle-compiler
+    implementation "androidx.lifecycle:lifecycle-common-java8:$rootProject.lifecycleVersion"
 
 
     // Firebase and Crashlytics platform
@@ -110,8 +111,8 @@ dependencies {
     // Unit Tests
     // --------------------------------------------------
     testImplementation "junit:junit:$rootProject.junitVersion"
-    testImplementation 'androidx.test:core:1.2.0' // Optional -- Robolectric environment
-    testImplementation "androidx.arch.core:core-testing:2.1.0" // Test helpers for LiveData
+    testImplementation "androidx.test:core:$rootProject.androidxTestCore" // Optional -- Robolectric environment
+    testImplementation "androidx.arch.core:core-testing:$rootProject.androidxArchCoreTesting" // Test helpers for LiveData
     testImplementation "org.mockito:mockito-core:$rootProject.mockitoVersion" // Optional -- Mockito framework
     testImplementation "org.mockito:mockito-inline:$rootProject.mockitoVersion" // Mockito framework
     androidTestImplementation "androidx.test:runner:$rootProject.androidTestRunnerVersion"

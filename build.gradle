@@ -21,13 +21,18 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.0'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
 
+
+        // https://mvnrepository.com/artifact/com.android.tools.build/gradle?repo=google
+        classpath 'com.android.tools.build:gradle:3.5.0'
+
+        // https://kotlinlang.org/docs/reference/using-gradle.html
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
         // Check for v3.1.2 or higher
-        classpath 'com.google.gms:google-services:4.3.1'
+        classpath 'com.google.gms:google-services:4.3.2'
 
         // Add fabric dependency
         classpath 'io.fabric.tools:gradle:1.29.0'
@@ -64,21 +69,21 @@ ext {
     // Google Products & Support library dependencies
     // AndroidX Versions: https://developer.android.com/jetpack/androidx/versions
     // --------------------------------------------------
-    appCompatVersion = '1.1.0-rc01' // https://developer.android.com/jetpack/androidx/releases/appcompat
+    appCompatVersion = '1.1.0' // https://developer.android.com/jetpack/androidx/releases/appcompat
     constraintLayoutVersion = '1.1.3' // https://developer.android.com/reference/android/support/constraint/ConstraintLayout
-    archComponentVersion = '2.1.0-rc01' // https://developer.android.com/topic/libraries/architecture/adding-components
+    archComponentVersion = '2.1.0' // https://developer.android.com/topic/libraries/architecture/adding-components
     lifecycleVersion = '2.0.0' // https://developer.android.com/jetpack/androidx/releases/lifecycle
     firebaseVersion = '17.2.0' // https://firebase.google.com/docs/android/setup
     crashlyticsVersion = '2.10.1' // https://firebase.google.com/docs/crashlytics/get-started
-    coreKtxVersion = '1.0.2' // https://developer.android.com/kotlin/ktx
+    coreKtxVersion = '1.1.0' // https://developer.android.com/kotlin/ktx
     androidMaterialVersion = '1.1.0-alpha10' // https://github.com/material-components/material-components-android/releases
-    viewPager2Version = '1.0.0-beta03' // https://developer.android.com/jetpack/androidx/releases/viewpager2
+    viewPager2Version = '1.0.0-beta04' // https://developer.android.com/jetpack/androidx/releases/viewpager2
 
     // 3rd party library dependencies
     // --------------------------------------------------
     daggerVersion = '2.22.1' // https://github.com/google/dagger
     timberLibraryVersion = '4.7.1' // https://github.com/JakeWharton/timber
-    leakcanaryLibraryVersion = '2.0-alpha-3' // https://github.com/square/leakcanary/releases
+    leakcanaryLibraryVersion = '2.0-beta-3' // https://github.com/square/leakcanary/releases
     rxJavaVersion = '2.2.8' // https://github.com/ReactiveX/RxJava/releases
     rxAndroidVersion = '2.1.1' // https://github.com/ReactiveX/RxAndroid/releases
     retrofitVersion = '2.5.0' // https://square.github.io/retrofit/
@@ -91,6 +96,8 @@ ext {
     // --------------------------------------------------
     junitVersion = '4.12'
     mockitoVersion = '2.8.47'
+    androidxTestCore = '1.2.0'
+    androidxArchCoreTesting = archComponentVersion
     androidTestRunnerVersion = '1.1.1'
     espressoVersion = '3.1.1'
 }
