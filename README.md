@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/amardeshbd/android-barebone.svg?style=svg)](https://circleci.com/gh/amardeshbd/android-barebone)   
+[![CircleCI](https://circleci.com/gh/amardeshbd/android-barebone.svg?style=svg)](https://circleci.com/gh/amardeshbd/android-barebone) [![](https://github.com/amardeshbd/android-barebone/workflows/Android%20CI/badge.svg)](https://github.com/amardeshbd/android-barebone/actions)  
 
 
 # Android Barebone Project
