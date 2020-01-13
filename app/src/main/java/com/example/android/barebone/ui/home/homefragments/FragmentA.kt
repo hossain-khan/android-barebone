@@ -16,8 +16,8 @@ import com.example.android.barebone.di.Injectable
 import com.example.android.barebone.ui.featurex.FeatureXActivity
 import com.example.android.barebone.ui.featurey.FeatureYActivity
 import com.example.android.barebone.ui.featurez.FeatureZActivity
-import timber.log.Timber
 import javax.inject.Inject
+import timber.log.Timber
 
 /**
  * Demo fragment for tab content.

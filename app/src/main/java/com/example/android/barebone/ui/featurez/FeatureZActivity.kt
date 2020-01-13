@@ -12,8 +12,8 @@ import com.example.android.barebone.databinding.ActivityFeatureZBinding
 import dagger.android.AndroidInjection
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
-import timber.log.Timber
 import javax.inject.Inject
+import timber.log.Timber
 
 /**
  * This activity shows how a fragment can be injected.

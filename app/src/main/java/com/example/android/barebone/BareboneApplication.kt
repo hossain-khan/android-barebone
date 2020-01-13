@@ -5,9 +5,9 @@ import android.app.Application
 import com.example.android.barebone.di.AppInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
-import timber.log.Timber.DebugTree
-import timber.log.Timber
 import javax.inject.Inject
+import timber.log.Timber
+import timber.log.Timber.DebugTree
 
 class BareboneApplication : Application(), HasActivityInjector {
     @Inject
