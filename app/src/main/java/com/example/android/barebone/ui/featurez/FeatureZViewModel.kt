@@ -5,8 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.android.barebone.data.DaoService
 import com.example.android.barebone.ui.extensions.LiveEvent
-import timber.log.Timber
 import javax.inject.Inject
+import timber.log.Timber
 
 class FeatureZViewModel @Inject constructor(private val daoService: DaoService) : ViewModel() {
     private val _showDialogEvent = LiveEvent<Unit>()

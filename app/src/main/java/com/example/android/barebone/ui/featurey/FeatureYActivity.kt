@@ -1,7 +1,7 @@
 package com.example.android.barebone.ui.featurey
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.android.barebone.R
 import com.example.android.barebone.databinding.ActivityFeatureYBinding
 import dagger.android.AndroidInjection
-import timber.log.Timber
 import javax.inject.Inject
+import timber.log.Timber
 
 /**
  * This activity shows how a recycler view is implemented using databinding and diffutils.

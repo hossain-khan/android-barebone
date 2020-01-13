@@ -2,13 +2,13 @@ package com.example.android.barebone.ui.featurex
 
 import androidx.databinding.ObservableField
 import androidx.lifecycle.ViewModel
-import com.example.android.barebone.ui.common.Result
 import com.example.android.barebone.api.WebServiceApi
+import com.example.android.barebone.ui.common.Result
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
-import timber.log.Timber
 import javax.inject.Inject
+import timber.log.Timber
 
 class FeatureXViewModel @Inject constructor(private val api: WebServiceApi) : ViewModel() {
     private val compositeDisposable = CompositeDisposable()

@@ -10,8 +10,8 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.android.barebone.R
 import com.example.android.barebone.di.Injectable
 import com.example.android.barebone.ui.home.HomeViewModel
-import timber.log.Timber
 import javax.inject.Inject
+import timber.log.Timber
 
 /**
  * Demo fragment for tab content.
