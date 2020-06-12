@@ -7,16 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import com.example.android.barebone.R
 import com.example.android.barebone.databinding.FragmentDemoContentABinding
-import com.example.android.barebone.di.Injectable
 import com.example.android.barebone.ui.featurex.FeatureXActivity
 import com.example.android.barebone.ui.featurey.FeatureYActivity
 import com.example.android.barebone.ui.featurez.FeatureZActivity
-import javax.inject.Inject
+import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
 /**
@@ -28,28 +26,22 @@ import timber.log.Timber
  *
  * TODO: Move the fragment to it's own feature package.
  */
-class FragmentA : Fragment(), Injectable {
+@AndroidEntryPoint
+class FragmentA : Fragment() {
     companion object {
         fun createInstance(): FragmentA {
             return FragmentA()
         }
     }
 
-    @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
-
     lateinit var binding: FragmentDemoContentABinding
-    lateinit var viewModel: FragmentAViewModel
+    val viewModel: FragmentAViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        viewModel = activity?.run {
-            ViewModelProviders.of(this, viewModelFactory).get(FragmentAViewModel::class.java)
-        } ?: throw Exception("Invalid Activity")
-
         Timber.d("Got injected fragment's own viewmodel instance: %s.", viewModel)
 
         // Inflate the layout for this fragment using data binding and set the view model

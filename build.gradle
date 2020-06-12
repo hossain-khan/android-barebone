@@ -5,6 +5,11 @@ buildscript {
     // https://blog.jetbrains.com/kotlin/category/releases/
     // https://github.com/JetBrains/kotlin/blob/master/ChangeLog.md
     ext.kotlin_version = '1.3.61'
+
+    // Dependency Injection for Android Applications
+    // https://dagger.dev/hilt/gradle-setup
+    ext.hilt_version = '2.28-alpha'
+
     repositories {
         google() // Google's Maven repository
         jcenter() // Add the Bintray repository
@@ -30,6 +35,9 @@ buildscript {
 
         // https://kotlinlang.org/docs/reference/using-gradle.html
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // https://dagger.dev/hilt/
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
 
         // The Google Services Gradle Plugin - Use v3.1.2 or higher
         // https://developers.google.com/android/guides/google-services-plugin
@@ -80,6 +88,7 @@ ext {
     coreKtxVersion = '1.1.0' // https://developer.android.com/jetpack/androidx/releases/core
     androidMaterialVersion = '1.1.0-rc01' // https://github.com/material-components/material-components-android/releases
     viewPager2Version = '1.0.0' // https://developer.android.com/jetpack/androidx/releases/viewpager2
+    androidXHilt = '1.0.0-alpha01' // https://developer.android.com/jetpack/androidx/releases/hilt
 
     // 3rd party library dependencies
     // --------------------------------------------------

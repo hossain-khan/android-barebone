@@ -3,6 +3,7 @@ apply plugin: 'io.fabric'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'org.jlleitschuh.gradle.ktlint'
+apply plugin: 'dagger.hilt.android.plugin'
 
 android {
     compileSdkVersion rootProject.ext.androidCompileSdkVersion
@@ -69,6 +70,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycleVersion"
     // alternately - if using Java8, use the following instead of lifecycle-compiler
     implementation "androidx.lifecycle:lifecycle-common-java8:$rootProject.lifecycleVersion"
+    implementation "androidx.fragment:fragment-ktx:1.2.5"
 
 
     // Firebase and Crashlytics platform
@@ -104,20 +106,25 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxAndroidVersion"
     implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxJavaVersion"
 
-    // Dagger (dependency injection)
-    implementation "com.google.dagger:dagger:$rootProject.daggerVersion"
-    implementation "com.google.dagger:dagger-android:$rootProject.daggerVersion"
-    implementation "com.google.dagger:dagger-android-support:$rootProject.daggerVersion"
-    kapt "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
-    kapt "com.google.dagger:dagger-android-processor:$rootProject.daggerVersion"
+    // Dagger Hilt (dependency injection)
+    // https://developer.android.com/training/dependency-injection/hilt-android#setup
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+    // Hilt and Jetpack integrations
+    // https://developer.android.com/training/dependency-injection/hilt-jetpack
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$rootProject.androidXHilt"
+    kapt "androidx.hilt:hilt-compiler:$rootProject.androidXHilt"
 
     //
     // Unit Tests
     // --------------------------------------------------
     testImplementation "junit:junit:$rootProject.junitVersion"
-    testImplementation "androidx.test:core:$rootProject.androidxTestCore" // Optional -- Robolectric environment
-    testImplementation "androidx.arch.core:core-testing:$rootProject.androidxArchCoreTesting" // Test helpers for LiveData
-    testImplementation "org.mockito:mockito-core:$rootProject.mockitoVersion" // Optional -- Mockito framework
+    testImplementation "androidx.test:core:$rootProject.androidxTestCore"
+    // Optional -- Robolectric environment
+    testImplementation "androidx.arch.core:core-testing:$rootProject.androidxArchCoreTesting"
+    // Test helpers for LiveData
+    testImplementation "org.mockito:mockito-core:$rootProject.mockitoVersion"
+    // Optional -- Mockito framework
     testImplementation "org.mockito:mockito-inline:$rootProject.mockitoVersion" // Mockito framework
     androidTestImplementation "androidx.test:runner:$rootProject.androidTestRunnerVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
