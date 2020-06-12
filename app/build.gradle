@@ -119,12 +119,9 @@ dependencies {
     // Unit Tests
     // --------------------------------------------------
     testImplementation "junit:junit:$rootProject.junitVersion"
-    testImplementation "androidx.test:core:$rootProject.androidxTestCore"
-    // Optional -- Robolectric environment
-    testImplementation "androidx.arch.core:core-testing:$rootProject.androidxArchCoreTesting"
-    // Test helpers for LiveData
-    testImplementation "org.mockito:mockito-core:$rootProject.mockitoVersion"
-    // Optional -- Mockito framework
+    testImplementation "androidx.test:core:$rootProject.androidxTestCore" // Optional -- Robolectric environment
+    testImplementation "androidx.arch.core:core-testing:$rootProject.androidxArchCoreTesting" // Test helpers for LiveData
+    testImplementation "org.mockito:mockito-core:$rootProject.mockitoVersion" // Optional -- Mockito framework
     testImplementation "org.mockito:mockito-inline:$rootProject.mockitoVersion" // Mockito framework
     androidTestImplementation "androidx.test:runner:$rootProject.androidTestRunnerVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
