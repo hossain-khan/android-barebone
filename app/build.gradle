@@ -61,7 +61,7 @@ dependencies {
 
     // Google Products & Support library dependencies
     // --------------------------------------------------
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
     implementation "androidx.core:core-ktx:$rootProject.coreKtxVersion"
     implementation "com.google.android.material:material:$rootProject.androidMaterialVersion"
@@ -119,10 +119,10 @@ dependencies {
     // Unit Tests
     // --------------------------------------------------
     testImplementation "junit:junit:$rootProject.junitVersion"
-    testImplementation "androidx.test:core:$rootProject.androidxTestCore" // Optional -- Robolectric environment
-    testImplementation "androidx.arch.core:core-testing:$rootProject.androidxArchCoreTesting" // Test helpers for LiveData
-    testImplementation "org.mockito:mockito-core:$rootProject.mockitoVersion" // Optional -- Mockito framework
-    testImplementation "org.mockito:mockito-inline:$rootProject.mockitoVersion" // Mockito framework
+    testImplementation "androidx.test:core:$rootProject.androidxTestCore"
+    testImplementation "androidx.arch.core:core-testing:$rootProject.androidxArchCoreTesting"
+    testImplementation "org.mockito:mockito-core:$rootProject.mockitoVersion"
+    testImplementation "org.mockito:mockito-inline:$rootProject.mockitoVersion"
     androidTestImplementation "androidx.test:runner:$rootProject.androidTestRunnerVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
 }
