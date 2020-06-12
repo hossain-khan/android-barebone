@@ -4,7 +4,7 @@ buildscript {
     // Kotlin Language and Gradle version
     // https://blog.jetbrains.com/kotlin/category/releases/
     // https://github.com/JetBrains/kotlin/blob/master/ChangeLog.md
-    ext.kotlin_version = '1.3.61'
+    ext.kotlin_version = '1.3.72'
 
     // Dependency Injection for Android Applications
     // https://dagger.dev/hilt/gradle-setup
@@ -31,7 +31,7 @@ buildscript {
 
 
         // https://mvnrepository.com/artifact/com.android.tools.build/gradle?repo=google
-        classpath 'com.android.tools.build:gradle:3.5.3'
+        classpath 'com.android.tools.build:gradle:3.6.3'
 
         // https://kotlinlang.org/docs/reference/using-gradle.html
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
@@ -48,7 +48,7 @@ buildscript {
         classpath 'io.fabric.tools:gradle:1.31.2'
 
         // https://github.com/jlleitschuh/ktlint-gradle#supported-kotlin-plugins
-        classpath "org.jlleitschuh.gradle:ktlint-gradle:9.1.1"
+        classpath "org.jlleitschuh.gradle:ktlint-gradle:9.2.1"
     }
 }
 
@@ -82,11 +82,11 @@ ext {
     appCompatVersion = '1.1.0' // https://developer.android.com/jetpack/androidx/releases/appcompat
     constraintLayoutVersion = '1.1.3' // https://developer.android.com/reference/android/support/constraint/ConstraintLayout
     archComponentVersion = '2.1.0' // https://developer.android.com/topic/libraries/architecture/adding-components
-    lifecycleVersion = '2.1.0' // https://developer.android.com/jetpack/androidx/releases/lifecycle
-    firebaseVersion = '17.2.1' // https://firebase.google.com/docs/android/setup
+    lifecycleVersion = '2.2.0' // https://developer.android.com/jetpack/androidx/releases/lifecycle
+    firebaseVersion = '17.4.3' // https://firebase.google.com/docs/android/setup
     crashlyticsVersion = '2.10.1' // https://firebase.google.com/docs/crashlytics/get-started
-    coreKtxVersion = '1.1.0' // https://developer.android.com/jetpack/androidx/releases/core
-    androidMaterialVersion = '1.1.0-rc01' // https://github.com/material-components/material-components-android/releases
+    coreKtxVersion = '1.3.0' // https://developer.android.com/jetpack/androidx/releases/core
+    androidMaterialVersion = '1.2.0-beta01' // https://github.com/material-components/material-components-android/releases
     viewPager2Version = '1.0.0' // https://developer.android.com/jetpack/androidx/releases/viewpager2
     androidXHilt = '1.0.0-alpha01' // https://developer.android.com/jetpack/androidx/releases/hilt
 
@@ -94,23 +94,23 @@ ext {
     // --------------------------------------------------
     daggerVersion = '2.22.1' // https://github.com/google/dagger
     timberLibraryVersion = '4.7.1' // https://github.com/JakeWharton/timber
-    leakcanaryLibraryVersion = '2.0' // https://github.com/square/leakcanary/releases
-    rxJavaVersion = '2.2.8' // https://github.com/ReactiveX/RxJava/releases
+    leakcanaryLibraryVersion = '2.4' // https://github.com/square/leakcanary/releases
+    rxJavaVersion = '2.2.9' // https://github.com/ReactiveX/RxJava/releases
     rxAndroidVersion = '2.1.1' // https://github.com/ReactiveX/RxAndroid/releases
-    retrofitVersion = '2.5.0' // https://square.github.io/retrofit/
-    gsonVersion = '2.8.5' // https://github.com/google/gson
-    okHttpVersion = '3.14.2' // https://github.com/square/okhttp
+    retrofitVersion = '2.8.2' // https://square.github.io/retrofit/
+    gsonVersion = '2.8.6' // https://github.com/google/gson
+    okHttpVersion = '4.6.0' // https://github.com/square/okhttp
     daggerVersion = '2.16' // https://github.com/google/dagger
 
     // Unit test dependencies
     // https://developer.android.com/training/testing/unit-testing/local-unit-tests
     // --------------------------------------------------
-    junitVersion = '4.12'
-    mockitoVersion = '2.8.47'
+    junitVersion = '4.13'
+    mockitoVersion = '3.3.3'
     androidxTestCore = '1.2.0'
     androidxArchCoreTesting = archComponentVersion
-    androidTestRunnerVersion = '1.1.1'
-    espressoVersion = '3.1.1'
+    androidTestRunnerVersion = '1.2.0'
+    espressoVersion = '3.2.0'
 }
 
 

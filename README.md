@@ -30,7 +30,7 @@ Here are list of dependencies included:
 1. **OkHttp** - with logging interceptor
 1. **Gson** - _JSON response parsing_
 1. **Mockito** - _unit test mocking_
-1. **Leak Canary 2 _(alpha)_** - _automatic memory leak detection_
+1. **Leak Canary 2** - _automatic memory leak detection_
 1. **Kt Lint Format** - _An anti-bikeshedding Kotlin linter with built-in formatter_
 
 ### Optional Library and Integrations
