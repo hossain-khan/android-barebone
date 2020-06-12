@@ -2,41 +2,25 @@ package com.example.android.barebone.ui.home
 
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.activity.viewModels
 import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import androidx.viewpager2.widget.ViewPager2
 import com.example.android.barebone.R
 import com.example.android.barebone.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import dagger.android.AndroidInjection
-import dagger.android.DispatchingAndroidInjector
-import dagger.android.support.HasSupportFragmentInjector
-import javax.inject.Inject
+import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
-class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener,
-    HasSupportFragmentInjector {
-
-    @Inject
-    lateinit var dispatchingAndroidFragmentInjector: DispatchingAndroidInjector<Fragment>
-
-    override fun supportFragmentInjector() = dispatchingAndroidFragmentInjector
-
-    @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
-
-    private lateinit var viewModel: HomeViewModel
+@AndroidEntryPoint
+class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
+    private val viewModel: HomeViewModel by viewModels()
     private lateinit var binding: ActivityMainBinding
     private lateinit var mainPagerAdapter: HomePagerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProviders.of(this, viewModelFactory).get(HomeViewModel::class.java)
 
         Timber.d("Activity created.") // Test logging using timber.
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)

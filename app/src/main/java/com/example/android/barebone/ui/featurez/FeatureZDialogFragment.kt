@@ -6,29 +6,21 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.DialogFragment
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
+import androidx.fragment.app.viewModels
 import com.example.android.barebone.R
 import com.example.android.barebone.databinding.DialogFeatureZBinding
-import com.example.android.barebone.di.Injectable
-import javax.inject.Inject
+import dagger.hilt.android.AndroidEntryPoint
 
-class FeatureZDialogFragment : DialogFragment(), Injectable {
-    @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
-
+@AndroidEntryPoint
+class FeatureZDialogFragment : DialogFragment() {
     lateinit var binding: DialogFeatureZBinding
-    lateinit var viewModel: FeatureZViewModel
+    val viewModel: FeatureZViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        viewModel = activity?.run {
-            ViewModelProviders.of(this, viewModelFactory).get(FeatureZViewModel::class.java)
-        } ?: throw Exception("Invalid Activity")
-
         binding = DataBindingUtil.inflate(inflater, R.layout.dialog_feature_z, container, false)
         binding.viewModel = viewModel
         return binding.root

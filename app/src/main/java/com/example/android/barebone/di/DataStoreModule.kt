@@ -5,7 +5,10 @@ import android.content.SharedPreferences
 import android.content.res.Resources
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ApplicationComponent
 
+@InstallIn(ApplicationComponent::class)
 @Module
 class DataStoreModule {
     @Provides

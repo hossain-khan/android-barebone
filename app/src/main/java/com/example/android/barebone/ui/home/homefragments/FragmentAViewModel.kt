@@ -1,13 +1,13 @@
 package com.example.android.barebone.ui.home.homefragments
 
 import android.content.SharedPreferences
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.example.android.barebone.ui.extensions.LiveEvent
-import javax.inject.Inject
 import timber.log.Timber
 
-class FragmentAViewModel @Inject constructor(
+class FragmentAViewModel @ViewModelInject constructor(
     sharedPreferences: SharedPreferences
 ) : ViewModel() {
     private val _featureXEvent = LiveEvent<Unit>()

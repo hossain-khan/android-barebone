@@ -1,12 +1,12 @@
 package com.example.android.barebone.ui.featurey
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.android.barebone.ui.featurey.model.ItemModel
-import javax.inject.Inject
 
-class FeatureYViewModel @Inject constructor() : ViewModel() {
+class FeatureYViewModel @ViewModelInject constructor() : ViewModel() {
     private val _data = MutableLiveData<List<ItemModel>>()
     val data: LiveData<List<ItemModel>> = _data
 
