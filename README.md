@@ -1,7 +1,7 @@
 [![CircleCI](https://circleci.com/gh/amardeshbd/android-barebone.svg?style=svg)](https://circleci.com/gh/amardeshbd/android-barebone) [![](https://github.com/amardeshbd/android-barebone/workflows/Android%20CI/badge.svg)](https://github.com/amardeshbd/android-barebone/actions)  
 
 
-# Android Barebone Project
+# Android Barebone Template Project
 A barebone MVVM architecture based Android project with some essential tools configured the right* way. See [Android Architecture Blueprints v2](https://github.com/googlesamples/android-architecture) for more comprehensive app architecture example.
 
 > Inspiration: The architecture is inspired by combination of different project by Google and Android Community, such as:
