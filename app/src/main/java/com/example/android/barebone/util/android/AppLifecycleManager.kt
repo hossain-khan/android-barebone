@@ -91,6 +91,5 @@ class AppLifecycleManager @Inject constructor(application: Application) {
 
         override fun onActivityDestroyed(activity: Activity) {
         }
-
     }
 }
