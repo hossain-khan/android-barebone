@@ -85,15 +85,13 @@ ext {
 
     // 3rd party library dependencies
     // --------------------------------------------------
-    daggerVersion = '2.22.1' // https://github.com/google/dagger
     timberLibraryVersion = '4.7.1' // https://github.com/JakeWharton/timber
     leakcanaryLibraryVersion = '2.4' // https://github.com/square/leakcanary/releases
-    rxJavaVersion = '2.2.9' // https://github.com/ReactiveX/RxJava/releases
-    rxAndroidVersion = '2.1.1' // https://github.com/ReactiveX/RxAndroid/releases
+    rxJavaVersion = '3.0.8' // https://github.com/ReactiveX/RxJava/releases
+    rxAndroidVersion = '3.0.0' // https://github.com/ReactiveX/RxAndroid/releases
     retrofitVersion = '2.9.0' // https://square.github.io/retrofit/
     gsonVersion = '2.8.6' // https://github.com/google/gson
-    okHttpVersion = '4.7.2' // https://github.com/square/okhttp
-    daggerVersion = '2.16' // https://github.com/google/dagger
+    okHttpVersion = '4.9.0' // https://github.com/square/okhttp
 
     // Unit test dependencies
     // https://developer.android.com/training/testing/unit-testing/local-unit-tests

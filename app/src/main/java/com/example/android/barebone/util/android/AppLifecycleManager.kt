@@ -4,8 +4,8 @@ import android.app.Activity
 import android.app.Application
 import android.os.Bundle
 import androidx.annotation.VisibleForTesting
-import io.reactivex.Observable
-import io.reactivex.subjects.PublishSubject
+import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.subjects.PublishSubject
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 import javax.inject.Singleton

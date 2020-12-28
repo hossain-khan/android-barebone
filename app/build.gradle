@@ -75,10 +75,15 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
     implementation "androidx.viewpager2:viewpager2:$rootProject.viewPager2Version"
     implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycleVersion"
     // alternately - if using Java8, use the following instead of lifecycle-compiler
     implementation "androidx.lifecycle:lifecycle-common-java8:$rootProject.lifecycleVersion"
     implementation "androidx.fragment:fragment-ktx:1.2.5"
 
+
+    // Kotlin Coroutines on Android
+    // https://developer.android.com/kotlin/coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2'
 
     // Firebase and Crashlytics platform
     // https://firebase.google.com/docs/android/setup
@@ -98,12 +103,12 @@ dependencies {
     // Leak canary - memory leak (DEBUG only)
     debugImplementation "com.squareup.leakcanary:leakcanary-android:$rootProject.leakcanaryLibraryVersion"
 
-    // Retrofit
+    // Retrofit - https://github.com/square/retrofit
     implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
-    implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava3:$rootProject.retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
 
-    // OkHttp Client
+    // OkHttp Client - https://github.com/square/okhttp
     implementation "com.squareup.okhttp3:okhttp:$rootProject.okHttpVersion"
     implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okHttpVersion"
 
@@ -113,8 +118,8 @@ dependencies {
     // --------------------------------------------------
     // ReactiveX / RxJava stream related libraries
     // --------------------------------------------------
-    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxAndroidVersion"
-    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxJavaVersion"
+    implementation "io.reactivex.rxjava3:rxandroid:$rootProject.rxAndroidVersion"
+    implementation "io.reactivex.rxjava3:rxjava:$rootProject.rxJavaVersion"
 
     // Dagger Hilt (dependency injection)
     // https://developer.android.com/training/dependency-injection/hilt-android#setup

@@ -1,7 +1,7 @@
 package com.example.android.barebone.util.rx;
 
-import io.reactivex.annotations.NonNull;
-import io.reactivex.annotations.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import java.util.NoSuchElementException;
 
