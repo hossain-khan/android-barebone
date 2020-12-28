@@ -35,7 +35,7 @@ Here are list of dependencies included:
 1. **Firebase Analytics**
 1. **Timber** - _android logging_
 1. **~Dagger 2~** - _~dependency injection for Activity and Fragment~_ Upgraded to **Dagger Hilt** (alpha), see [PR#38](https://github.com/amardeshbd/android-barebone/pull/38)
-1. **RxJava 2** - _ReactiveX Java_
+1. **RxJava 3** - _ReactiveX Java_
 1. **Retrofit 2** - _REST API_
 1. **OkHttp** - with logging interceptor
 1. **Gson** - _JSON response parsing_
