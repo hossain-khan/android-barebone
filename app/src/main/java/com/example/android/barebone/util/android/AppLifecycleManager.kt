@@ -59,16 +59,16 @@ class AppLifecycleManager @Inject constructor(application: Application) {
     }
 
     private inner class Callbacks : Application.ActivityLifecycleCallbacks {
-        override fun onActivitySaveInstanceState(activity: Activity?, outState: Bundle?) {
+        override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle) {
         }
 
-        override fun onActivityResumed(activity: Activity?) {
+        override fun onActivityResumed(activity: Activity) {
         }
 
-        override fun onActivityPaused(activity: Activity?) {
+        override fun onActivityPaused(activity: Activity) {
         }
 
-        override fun onActivityStarted(activity: Activity?) {
+        override fun onActivityStarted(activity: Activity) {
             synchronized(activeActivityCount) {
                 activeActivityCount++
                 if (activeActivityCount == 1) {
@@ -77,7 +77,7 @@ class AppLifecycleManager @Inject constructor(application: Application) {
             }
         }
 
-        override fun onActivityStopped(activity: Activity?) {
+        override fun onActivityStopped(activity: Activity) {
             synchronized(activeActivityCount) {
                 activeActivityCount--
                 if (activeActivityCount == 0) {
@@ -86,10 +86,10 @@ class AppLifecycleManager @Inject constructor(application: Application) {
             }
         }
 
-        override fun onActivityCreated(activity: Activity?, savedInstanceState: Bundle?) {
+        override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
         }
 
-        override fun onActivityDestroyed(activity: Activity?) {
+        override fun onActivityDestroyed(activity: Activity) {
         }
     }
 }
