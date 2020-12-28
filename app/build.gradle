@@ -59,6 +59,10 @@ ktlint {
     android = true
 }
 
+kapt {
+    correctErrorTypes true
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
@@ -77,9 +81,12 @@ dependencies {
 
 
     // Firebase and Crashlytics platform
+    // https://firebase.google.com/docs/android/setup
+    // https://firebase.google.com/docs/android/learn-more#bom
     // --------------------------------------------------
-    implementation "com.google.firebase:firebase-analytics:$rootProject.firebaseAnalytics"
-    implementation "com.google.firebase:firebase-crashlytics:$rootProject.crashlyticsVersion"
+    implementation platform('com.google.firebase:firebase-bom:26.2.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-crashlytics'
 
     //
     // 3rd-Party Libraries
