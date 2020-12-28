@@ -2,7 +2,6 @@ package com.example.android.barebone.util.rx
 
 import io.reactivex.rxjava3.core.Observable
 
-
 /**
  * Immutable interface of [MutableVariable] for the code where you want to expose a [Variable] but
  * do not want the users to modify it.

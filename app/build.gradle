@@ -75,10 +75,15 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
     implementation "androidx.viewpager2:viewpager2:$rootProject.viewPager2Version"
     implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycleVersion"
     // alternately - if using Java8, use the following instead of lifecycle-compiler
     implementation "androidx.lifecycle:lifecycle-common-java8:$rootProject.lifecycleVersion"
     implementation "androidx.fragment:fragment-ktx:1.2.5"
 
+
+    // Kotlin Coroutines on Android
+    // https://developer.android.com/kotlin/coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2'
 
     // Firebase and Crashlytics platform
     // https://firebase.google.com/docs/android/setup
