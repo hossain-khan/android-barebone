@@ -1,11 +1,13 @@
 [![CircleCI](https://circleci.com/gh/amardeshbd/android-barebone.svg?style=svg)](https://circleci.com/gh/amardeshbd/android-barebone) [![](https://github.com/amardeshbd/android-barebone/workflows/Android%20CI/badge.svg)](https://github.com/amardeshbd/android-barebone/actions)  
 
 ---
-# What about template for 2020?
+# What about template for 2021 and beyond?
 While the template was made in `2019`, it holds up well in `2020`, however there are more cool stuff came around since then.
 You should always refer to Google's official projects for pointers. Here are some relevant references:
 * https://developer.android.com/jetpack and https://developer.android.com/jetpack/androidx/versions
 * https://github.com/android/sunflower
+* https://github.com/android/architecture-samples
+* https://github.com/chrisbanes/tivi
 * https://github.com/cortinico/kotlin-android-template
 * https://medium.com/@hossainkhan/how-to-take-your-beginner-android-skills-to-the-next-level-by-studying-open-source-android-apps-713d55c5094
 ---
